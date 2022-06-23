@@ -1,0 +1,9 @@
+version: "3.9"
+services:
+  bot:
+    build:
+      context: .
+    restart: always
+    volumes:
+      - ./runtime:/app/runtime
+      - ./.env:/app/.env
