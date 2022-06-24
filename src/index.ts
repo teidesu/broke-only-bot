@@ -45,6 +45,7 @@ dp.onInlineQuery(async (query) => {
                 text: 'Only for non-Premiums!',
                 parameter: '42',
             },
+            cacheTime: 0
         })
     }
 
