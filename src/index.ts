@@ -83,6 +83,10 @@ dp.onChosenInlineResult(async (upd) => {
 })
 
 dp.onCallbackQuery(filters.regex(/^read:(.+)/), async (query) => {
+    if (query.user.isPremium) {
+        await query.answer({ text: 'Fuck off rich mf', alert: true })
+    }
+
     try {
         const text = decryptSecretMessage(await getPage(query.match[1]))
         await query.answer({ text, alert: true })
